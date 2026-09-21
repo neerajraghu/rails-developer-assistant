@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.5"
 # Pin below 3.x: json 3.0 dropped the `quirks_mode` keyword Rails 8.0.5's cookie
 # serializer still passes to JSON.generate, which raises ArgumentError on every request.
-gem "json", "~> 2.7"
+gem "json", "~> 3.0"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use postgresql as the database for Active Record
