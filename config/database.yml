@@ -28,17 +28,9 @@ test:
 # database to this web service). Rails merges it on top of these defaults
 # automatically, so no host/username/password needs to be repeated here.
 #
-# cache/queue/cable all point at the same database as primary, this app has no
-# background jobs and doesn't need them split out into separate databases.
+# A single database, no separate primary/cache/queue/cable roles: Rails only
+# auto-applies DATABASE_URL to a role named "primary", any other named role
+# falls back to the plain defaults above and fails to connect. This app has no
+# background jobs and doesn't need those split out anyway.
 production:
-  primary: &primary_production
-    <<: *default
-  cache:
-    <<: *primary_production
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    migrations_paths: db/cable_migrate
+  <<: *default
