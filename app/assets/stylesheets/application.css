@@ -1,0 +1,60 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #1a1a1a;
+}
+
+#messages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.message {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  white-space: normal;
+}
+
+.message-user {
+  background: #eef2ff;
+  align-self: flex-end;
+}
+
+.message-assistant {
+  background: #f3f4f6;
+}
+
+.message pre {
+  white-space: pre-wrap;
+  background: #1a1a1a;
+  color: #f3f4f6;
+  padding: 0.5rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+#chat-error {
+  color: #b91c1c;
+  min-height: 1.2em;
+}
+
+#new_message_form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
