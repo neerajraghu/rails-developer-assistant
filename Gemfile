@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0.5"
+gem "rails", "~> 8.1.3"
 # Pin below 3.x: json 3.0 dropped the `quirks_mode` keyword Rails 8.0.5's cookie
 # serializer still passes to JSON.generate, which raises ArgumentError on every request.
 gem "json", "~> 2.7"
