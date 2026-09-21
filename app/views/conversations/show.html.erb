@@ -1,0 +1,14 @@
+<%= link_to "&larr; All conversations".html_safe, conversations_path %>
+
+<h1><%= @conversation.title.presence || "New conversation" %></h1>
+
+<div id="messages">
+  <%= render @conversation.messages %>
+</div>
+
+<div id="chat-error"></div>
+
+<%= form_with model: [@conversation, Message.new], id: "new_message_form" do |form| %>
+  <%= form.text_area :content, rows: 2, placeholder: "Ask a Rails question...", required: true %>
+  <%= form.submit "Send", data: { turbo_submits_with: "Sending..." } %>
+<% end %>

@@ -1,0 +1,4 @@
+<div id="<%= dom_id(message) %>" class="message message-<%= message.role %>">
+  <strong><%= message.user? ? "You" : "Assistant" %>:</strong>
+  <span><%= simple_format(message.content) %></span>
+</div>

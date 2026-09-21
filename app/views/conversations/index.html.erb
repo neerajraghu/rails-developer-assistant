@@ -1,0 +1,14 @@
+<h1>Rails Developer Assistant</h1>
+<p>Ask questions about Ruby on Rails development. Answers come from a small curated knowledge base.</p>
+
+<%= button_to "Start a new conversation", conversations_path, method: :post %>
+
+<h2>Past conversations</h2>
+<ul id="conversations-list">
+  <% @conversations.each do |conversation| %>
+    <li><%= link_to conversation.title.presence || "Untitled conversation", conversation %></li>
+  <% end %>
+  <% if @conversations.empty? %>
+    <li>No conversations yet.</li>
+  <% end %>
+</ul>
