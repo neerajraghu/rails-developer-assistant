@@ -1,0 +1,9 @@
+<%= turbo_stream.append "messages", @user_message %>
+<%= turbo_stream.append "messages", @assistant_message %>
+<%= turbo_stream.update "chat-error", "" %>
+<%= turbo_stream.replace "new_message_form" do %>
+  <%= form_with model: Message.new, id: "new_message_form" do |form| %>
+    <%= form.text_area :content, rows: 2, placeholder: "Ask a Rails question...", required: true %>
+    <%= form.submit "Send", data: { turbo_submits_with: "Sending..." } %>
+  <% end %>
+<% end %>

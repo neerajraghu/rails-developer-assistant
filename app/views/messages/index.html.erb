@@ -1,0 +1,13 @@
+<h1>Rails Developer Assistant</h1>
+<p>Ask questions about Ruby on Rails development. Answers come from a small curated knowledge base.</p>
+
+<div id="messages">
+  <%= render @messages %>
+</div>
+
+<div id="chat-error"></div>
+
+<%= form_with model: Message.new, id: "new_message_form" do |form| %>
+  <%= form.text_area :content, rows: 2, placeholder: "Ask a Rails question...", required: true %>
+  <%= form.submit "Send", data: { turbo_submits_with: "Sending..." } %>
+<% end %>
